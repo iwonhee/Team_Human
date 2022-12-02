@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+
+    <ImageView
+        android:id="@+id/img_product"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:src="@drawable/img1"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="140dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+
+        >
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="상품명 봉고데기 어쩌고저쩌고"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="#000"
+            />
+
+        <TextView
+            android:id="@+id/tv_intro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="설명 봉고데기 어쩌고 저쩌고모르겠다"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_marginTop="5dp"
+            />
+
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3,000원"
+            android:textStyle="bold"
+            android:textColor="#FF9800"
+            android:textSize="20dp"
+            android:layout_marginTop="5dp"
+            />
+    </LinearLayout>
+</LinearLayout>
