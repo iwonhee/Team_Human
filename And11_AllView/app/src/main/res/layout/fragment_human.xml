@@ -11,7 +11,10 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="휴먼"/>
+        android:text="휴먼 - 2인 구현"
+        android:textAlignment="center"
+        android:padding="5dp"
+        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recv_human"

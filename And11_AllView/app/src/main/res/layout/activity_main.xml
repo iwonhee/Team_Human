@@ -44,22 +44,24 @@
             android:id="@+id/btn_recycler"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="리사이클러뷰"
+            android:text="recv"
             android:layout_marginRight="10dp"
-            android:backgroundTint="#123"/>
+            />
 
         <Button
             android:id="@+id/btn_melon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="리사이클러뷰 직접구현"
-            android:backgroundTint="#9C27B0"/>
+            android:text="recv 직접구현"
+            android:layout_marginRight="10dp"
+            />
 
         <Button
             android:text="human"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btn_human"
+            android:backgroundTint="#FF5722"
             />
 
     </LinearLayout>
