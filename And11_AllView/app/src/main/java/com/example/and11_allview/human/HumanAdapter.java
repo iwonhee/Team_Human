@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.and11_allview.R;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class HumanAdapter extends RecyclerView.Adapter<HumanAdapter.ViewHolder>{
@@ -36,7 +37,13 @@ public class HumanAdapter extends RecyclerView.Adapter<HumanAdapter.ViewHolder>{
         h.iv_product.setImageResource(list.get(i).iv_product);
         h.tv_title.setText(list.get(i).getTv_title());
         h.tv_intro.setText(list.get(i).getTv_intro());
-        h.tv_price.setText(list.get(i).getTv_price());
+
+        String number = list.get(i).getTv_price();
+        double amount = Double.parseDouble(number);
+        DecimalFormat formatter = new DecimalFormat("#,###");
+        String formatted = formatter.format(amount);
+
+        h.tv_price.setText(formatted+"원");
     }
 
     @Override
