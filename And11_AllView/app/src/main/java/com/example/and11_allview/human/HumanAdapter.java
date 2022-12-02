@@ -34,11 +34,23 @@ public class HumanAdapter extends RecyclerView.Adapter<HumanAdapter.ViewHolder>{
     public void onBindViewHolder(@NonNull ViewHolder h, int i) {
         //각각의 아이템에 다른 이미지,테스트 적용
         h.iv_product.setImageResource(list.get(i).iv_product);
+        h.tv_title.setText(list.get(i).getTv_title());
+        h.tv_intro.setText(list.get(i).getTv_intro());
+        h.tv_price.setText(list.get(i).getTv_price());
     }
 
     @Override
     public int getItemCount() {
         return list.size();
+    }
+    // 포지션이 꼬여서 데이터 통제가 안되는 문제 해결법
+    @Override
+    public long getItemId(int position){
+        return position;
+    }
+    @Override
+    public int getItemViewType(int position){
+        return position;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -48,6 +60,9 @@ public class HumanAdapter extends RecyclerView.Adapter<HumanAdapter.ViewHolder>{
         public ViewHolder(@NonNull View v) {
             super(v);
             iv_product = v.findViewById(R.id.iv_product);
+            tv_title = v.findViewById(R.id.tv_title);
+            tv_intro = v.findViewById(R.id.tv_intro);
+            tv_price = v.findViewById(R.id.tv_price);
         }
     }
 }
