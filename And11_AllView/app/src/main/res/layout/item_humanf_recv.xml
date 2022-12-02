@@ -7,8 +7,9 @@
     android:padding="10dp">
 
 
+    
     <ImageView
-        android:id="@+id/img_product"
+        android:id="@+id/iv_product"
         android:layout_width="140dp"
         android:layout_height="140dp"
         android:src="@drawable/img1"/>
