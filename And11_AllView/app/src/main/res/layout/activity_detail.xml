@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Detail Activity"
+        android:textColor="@color/black"
+        android:textSize="28dp"
+        android:padding="10dp"
+        android:textAlignment="center"
+        />
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="무슨 아이템 클릭했는지"
+        android:textSize="24dp"
+        android:textAlignment="center"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+        <Button
+            android:id="@+id/btn_return_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="메인화면"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            />
+        <Button
+            android:id="@+id/btn_return_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="목록으로"
+            />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+    </FrameLayout>
+
+</LinearLayout>
