@@ -21,18 +21,19 @@ public class HumanFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_human, container, false);
 
-        RecyclerView recy_human = v.findViewById(R.id.recv_human);
+        RecyclerView recv_human = v.findViewById(R.id.recv_human);
 
         ArrayList<HumanDTO> list = new ArrayList<>();
 
-        list.add(new HumanDTO());
+        list.add(new HumanDTO(R.drawable.img_human1, "상품명1 : selkfjl", "설명1 : esofijlks", "30000원"));
+        list.add(new HumanDTO(R.drawable.img_human2, "상품명2 : selkfjl", "설명2 : esofijlks", "30000원"));
 
-        recy_human.setAdapter(new HumanAdapter(inflater, list));
+        recv_human.setAdapter(new HumanAdapter(inflater, list));
         // 리사이클러뷰 매니저 설정
         RecyclerView.LayoutManager manager = new LinearLayoutManager(
                 getContext(), RecyclerView.VERTICAL, false
         );
-        recy_human.setLayoutManager(manager);
+        recv_human.setLayoutManager(manager);
 
         return v;
     }

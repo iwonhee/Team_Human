@@ -26,13 +26,14 @@ public class HumanAdapter extends RecyclerView.Adapter<HumanAdapter.ViewHolder>{
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         // 아이템 붙이기 ( 수정 필요 )
-        View v = inflater.inflate(R.layout.item_recy_melon, parent, false);
+        View v = inflater.inflate(R.layout.item_humanf_recv, parent, false);
         return new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder h, int i) {
         //각각의 아이템에 다른 이미지,테스트 적용
+        h.iv_product.setImageResource(list.get(i).iv_product);
     }
 
     @Override
@@ -42,11 +43,11 @@ public class HumanAdapter extends RecyclerView.Adapter<HumanAdapter.ViewHolder>{
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         //아이템 필드
-        ImageView iv_main;
-        TextView tv_title, tv_price;
+        ImageView iv_product;
+        TextView tv_title, tv_intro, tv_price;
         public ViewHolder(@NonNull View v) {
             super(v);
-
+            iv_product = v.findViewById(R.id.iv_product);
         }
     }
 }
