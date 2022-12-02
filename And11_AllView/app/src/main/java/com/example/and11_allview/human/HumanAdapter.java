@@ -1,5 +1,8 @@
 package com.example.and11_allview.human;
 
+import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,18 +12,22 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.and11_allview.DetailActivity;
 import com.example.and11_allview.R;
 
+import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class HumanAdapter extends RecyclerView.Adapter<HumanAdapter.ViewHolder>{
     LayoutInflater inflater;
     ArrayList<HumanDTO> list;
+    Context context;
 
-    public HumanAdapter(LayoutInflater inflater, ArrayList<HumanDTO> list) {
+    public HumanAdapter(LayoutInflater inflater, ArrayList<HumanDTO> list, Context context) {
         this.inflater = inflater;
         this.list = list;
+        this.context = context;
     }
 
     @NonNull
@@ -42,8 +49,19 @@ public class HumanAdapter extends RecyclerView.Adapter<HumanAdapter.ViewHolder>{
         double amount = Double.parseDouble(number);
         DecimalFormat formatter = new DecimalFormat("#,###");
         String formatted = formatter.format(amount);
-
         h.tv_price.setText(formatted+"원");
+
+        h.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("ss", "onClick: ");
+                Intent intent = new Intent(context, DetailActivity.class);
+                intent.putExtra("list", list);
+                intent.putExtra("position", i);
+                context.startActivity(intent);
+            }
+        });
+
     }
 
     @Override
@@ -60,7 +78,7 @@ public class HumanAdapter extends RecyclerView.Adapter<HumanAdapter.ViewHolder>{
         return position;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder{
         //아이템 필드
         ImageView iv_product;
         TextView tv_title, tv_intro, tv_price;
@@ -70,6 +88,7 @@ public class HumanAdapter extends RecyclerView.Adapter<HumanAdapter.ViewHolder>{
             tv_title = v.findViewById(R.id.tv_title);
             tv_intro = v.findViewById(R.id.tv_intro);
             tv_price = v.findViewById(R.id.tv_price);
+
         }
     }
 }

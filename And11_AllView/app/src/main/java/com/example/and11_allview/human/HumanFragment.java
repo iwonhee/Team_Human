@@ -36,7 +36,7 @@ public class HumanFragment extends Fragment {
         list.add(new HumanDTO(R.drawable.img_human9, "자전거 바구니", "사고위험", "15000"));
         list.add(new HumanDTO(R.drawable.img_human10, "캣그라스", "욤뇸뇸", "13000"));
 
-        recv_human.setAdapter(new HumanAdapter(inflater, list));
+        recv_human.setAdapter(new HumanAdapter(inflater, list, getContext()));
         // 리사이클러뷰 매니저 설정
         RecyclerView.LayoutManager manager = new LinearLayoutManager(
                 getContext(), RecyclerView.VERTICAL, false

@@ -1,6 +1,8 @@
 package com.example.and11_allview.human;
 
-public class HumanDTO {
+import java.io.Serializable;
+
+public class HumanDTO implements Serializable {
     int iv_product;
     String tv_title, tv_intro, tv_price;
 
