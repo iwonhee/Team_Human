@@ -1,9 +1,11 @@
 package com.example.and11_allview.recylerMelon;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -36,6 +38,14 @@ public class MelonAdapter extends RecyclerView.Adapter<MelonAdapter.ViewHolder> 
         h.iv_main.setImageResource(list.get(i).iv_main);
         h.tv_title.setText(list.get(i).tv_title);
         h.tv_sub.setText(list.get(i).tv_sub);
+
+        //이벤트 처리
+        h.lin_item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("log", "onClick: ");
+            }
+        });
     }
 
     @Override
@@ -57,13 +67,14 @@ public class MelonAdapter extends RecyclerView.Adapter<MelonAdapter.ViewHolder> 
         //필드
         ImageView iv_main;
         TextView tv_title, tv_sub;
+        LinearLayout lin_item;
         public ViewHolder(@NonNull View v) {
             super(v);
             // item id 초기화
             iv_main = v.findViewById(R.id.iv_main);
             tv_title = v.findViewById(R.id.tv_title);
             tv_sub = v.findViewById(R.id.tv_sub);
-
+            lin_item = v.findViewById(R.id.lin_item);
         }
     }
 }
